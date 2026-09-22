@@ -1,0 +1,15 @@
+# Runtime / generated
+logs/
+crash-reports/
+cache/
+*cache/
+libraries/
+versions/
+world*/
+*.jar
+*.log
+usercache.json
+ops.json
+banned-*.json
+whitelist.json
+session.lock
