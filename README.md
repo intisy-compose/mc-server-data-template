@@ -1,20 +1,24 @@
-# Minecraft server data (template)
+# mc-server-data-template
 
-Public **template** data repo for [game-compose](https://github.com/intisy-compose/game-compose).
-It is the default mounted into the `mc-server-data-template` slot so a fresh clone runs out of the box.
+Public default Minecraft server data for game-compose.
 
-Holds a Paper/Spigot server configuration: `server.properties`, plugin configs, and similar. Actual worlds and logs are runtime state and are ignored.
+Default data for the `mc` slot of
+[game-compose](https://github.com/intisy-compose/game-compose), so a fresh
+`git clone --recursive` runs out of the box. It holds no server files yet: the server image
+generates its defaults on first start, and runtime state (worlds, saves, logs) is gitignored.
 
 ## Use your own data
 
-Fork or replace this repo, then point the slot at it:
+Fork or replace this repo and commit your configuration (`server.properties`, `bukkit.yml`, `config/` and plugin configs), then point the slot at it
+from the game-compose checkout:
 
 ```bash
-./data.sh use mc-server <owner/repo[@ref]>   # from the game-compose repo
+./data.sh use mc <owner/repo[@ref]>   # your own data repo, optionally a branch
+./data.sh use mc                      # back to this template
 ```
 
-Worlds, saves and logs are gitignored — commit configuration, not runtime state.
+Commit configuration, not runtime state.
 
 ## License
 
-MIT
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
